@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--通过起别名可以简化 resultType="user"-->
+    <!--起别名最简单的还是包扫描-->
+    <!--com.future.pojo 需要动态修改-->
+    <typeAliases>
+        <package name="com.ithema.pojo"/>
+    </typeAliases>
+    <!--
+        environment 是用来配置数据库连接的环境信息的，可以配置多个environment，
+        通过default="id" 属性切换不同的environment
+    -->
+    <!-- experiment数据库需要动态修改-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///test?useSSL=false&amp;useServerPreStmts=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--指定当前SQL映射文件的路径的-->
+    <!--如果Mapper接口名称和SQL映射文件名称相同，并在同一目录下，则可使用包扫描的方式简化SQL映射文件的加载-->
+    <!--将来真正做项目，不单单有UserMapper.xml更多的会有很多.xml文件，这样的话coding起来还是十分繁琐的-->
+    <mappers>
+        <!--
+            mapper代理：包扫描,直接扫描包下所有的.xml文件
+            "com.future.mapper"需要动态修改
+        -->
+        <package name="com.ithema.mapper"/>
+    </mappers>
+</configuration>
