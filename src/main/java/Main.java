@@ -5,5 +5,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(n);
+        System.out.println("中国你好，世界你好");
     }
 }
