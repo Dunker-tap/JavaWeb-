@@ -5,6 +5,7 @@
     <title>详情</title>
 </head>
 <body>
+<h1>${user.username},欢迎您 ^_^</h1>
 <a href="addBrand.jsp">
     <input type="button" name="新增" id="add" value="新增"></a>
 <hr>
