@@ -83,19 +83,21 @@
 <div class="container">
     <div class="login-wrapper">
         <div class="header">登录</div>
-        <div>${login_msg}</div>
+        <div style="color:red;">${login_msg} ${register_msg}</div>
         <div class="form-wrapper">
             <form action="/loginServlet" method="post" id="form">
                 <%--name属性是用来传值的--%>
                 <label>
-                    <input id="username" type="text" name="username" placeholder="用户名" class="input-item">
+                    <input id="username" type="text" name="username" value="${cookie.username.value}" placeholder="用户名"
+                           class="input-item">
                 </label>
                 <label>
-                    <input id="password" type="password" name="password" placeholder="密码" class="input-item">
+                    <input id="password" type="password" name="password" value="${cookie.password.value}"
+                           placeholder="密码" class="input-item">
                 </label>
                 <p>
                     <label>
-                        记住我 <input id="remember" type="checkbox" name="remember">
+                        记住我 <input id="remember" type="checkbox" name="remember" value="1">
                     </label>
                 </p>
                 <div class="btn">

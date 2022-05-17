@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,15 +84,16 @@
     <div class="login-wrapper">
         <div class="header">注册</div>
         <div class="form-wrapper">
-            <form action="" method="post">
+            <form action="/registerServlet" method="post">
+                <span style="color: red">${register_msg}</span>
                 <label>
-                    <input type="text" name="username" placeholder="用户名" class="input-item">
+                    <input type="text" name="username" placeholder="用户名" class="input-item" value="${username}">
                 </label>
                 <label>
-                    <input type="password" name="password" placeholder="密码" class="input-item">
+                    <input type="password" name="password" placeholder="密码" class="input-item" value="${password}">
                 </label>
                 <div class="btn">
-                    <input type="submit" name="注册" value="注册">
+                    <input type="submit" name="register" value="注册">
                 </div>
             </form>
         </div>

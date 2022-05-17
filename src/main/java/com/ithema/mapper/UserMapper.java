@@ -9,7 +9,7 @@ public interface UserMapper {
     @Select("select * from user where username = #{username} and password = #{password}")
     User select(@Param("username") String username, @Param("password") String password);
 
-    @Select("select * from user where username = #{usernmae}")
+    @Select("select * from user where username = #{username}")
     User selectByUsername(String username);
 
     @Insert("insert into user values(null,#{username},#{password})")
