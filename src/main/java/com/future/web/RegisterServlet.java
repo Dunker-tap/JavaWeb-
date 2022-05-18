@@ -29,10 +29,13 @@ public class RegisterServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String checkCodeGen = (String) session.getAttribute("checkCodeGen");
 
-
         if ("".equals(username)) {
             if ("".equals(password)) {
                 request.setAttribute("register_msg", "请输入用户名和密码");
+                request.getRequestDispatcher("/register.jsp").forward(request, response);
+            } else if (!checkCodeGen.equalsIgnoreCase(checkCode)) {
+                // 这里使用equalsIgnoreCase的目的是：实现当验证码为JVN8的时候，输入jvm8也能验证成功成功
+                request.setAttribute("register_msg", "验证码错误");
                 request.getRequestDispatcher("/register.jsp").forward(request, response);
             } else {
                 request.setAttribute("register_msg", "请输入用户名");
@@ -43,6 +46,10 @@ public class RegisterServlet extends HttpServlet {
             if ("".equals(password)) {
                 request.setAttribute("register_msg", "请输入密码");
                 request.setAttribute("username", username);
+                request.getRequestDispatcher("/register.jsp").forward(request, response);
+            } else if (!checkCodeGen.equalsIgnoreCase(checkCode)) {
+                // 这里使用equalsIgnoreCase的目的是：实现当验证码为JVN8的时候，输入jvm8也能验证成功成功
+                request.setAttribute("register_msg", "验证码错误");
                 request.getRequestDispatcher("/register.jsp").forward(request, response);
             } else {
                 //1.创建对应的对象
