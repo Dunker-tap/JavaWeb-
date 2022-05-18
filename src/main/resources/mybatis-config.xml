@@ -7,7 +7,7 @@
     <!--起别名最简单的还是包扫描-->
     <!--com.future.pojo 需要动态修改-->
     <typeAliases>
-        <package name="com.ithema.pojo"/>
+        <package name="com.future.pojo"/>
     </typeAliases>
     <!--
         environment 是用来配置数据库连接的环境信息的，可以配置多个environment，
@@ -33,6 +33,6 @@
             mapper代理：包扫描,直接扫描包下所有的.xml文件
             "com.future.mapper"需要动态修改
         -->
-        <package name="com.ithema.mapper"/>
+        <package name="com.future.mapper"/>
     </mappers>
 </configuration>

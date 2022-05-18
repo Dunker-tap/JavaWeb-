@@ -1,4 +1,4 @@
-package com.ithema.util;
+package com.future.util;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;

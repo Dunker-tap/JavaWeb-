@@ -1,6 +1,6 @@
-package com.ithema.mapper;
+package com.future.mapper;
 
-import com.ithema.pojo.Brand;
+import com.future.pojo.Brand;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;

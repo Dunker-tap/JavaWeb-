@@ -1,7 +1,7 @@
-package com.ithema.web;
+package com.future.web;
 
-import com.ithema.pojo.Brand;
-import com.ithema.service.BrandService;
+import com.future.pojo.Brand;
+import com.future.service.BrandService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @WebServlet("/selectByIdServlet")
 public class SelectByIdServlet extends HttpServlet {
-    private BrandService service = new BrandService();
+    private final BrandService service = new BrandService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

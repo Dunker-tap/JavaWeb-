@@ -1,8 +1,8 @@
-package com.ithema.service;
+package com.future.service;
 
-import com.ithema.mapper.UserMapper;
-import com.ithema.pojo.User;
-import com.ithema.util.SqlSessionFactoryUtils;
+import com.future.mapper.UserMapper;
+import com.future.pojo.User;
+import com.future.util.SqlSessionFactoryUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -41,9 +41,9 @@ public class UserService {
             mapper.add(user);
             sqlSession.commit();
         }
-        //注意释放资源
+        //释放资源
         sqlSession.close();
-        //直接返回u == null就行，减少了代码量
+        //直接返回u == null，因为它是一个boolean类型，减少了代码量
         return u == null;
     }
 }

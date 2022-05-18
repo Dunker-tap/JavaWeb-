@@ -1,22 +1,27 @@
-package com.ithema.session;
+package com.future.web;
+
+import com.future.pojo.Brand;
+import com.future.service.BrandService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 
-@WebServlet("/demo1")
-public class ServletDemo1 extends HttpServlet {
+@WebServlet("/selectAllServlet")
+public class SelectAllServlet extends HttpServlet {
+    private final BrandService service = new BrandService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //获取session对象
-        HttpSession session = request.getSession();
-        //存储数据,value的值不一定是字符串类型，可以是object
-        session.setAttribute("username", "future");
 
+        ArrayList<Brand> brands = service.selectAll();
+
+        request.setAttribute("brands", brands);
+        request.getRequestDispatcher("/brand.jsp").forward(request, response);
     }
 
     @Override

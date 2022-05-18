@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace 名称空间,只有设置了名称空间，前面那个蓝色的小鸟才会出现-->
-<mapper namespace="com.ithema.mapper.BrandMapper">
+<mapper namespace="com.future.mapper.BrandMapper">
     <resultMap id="brandResultMap" type="brand">
         <!--id：唯一标识 完成主键类型的映射的，一般用不到，主键一般都是id-->
         <!--type 映射的类型，支持别名 完成字段类型的映射的-->

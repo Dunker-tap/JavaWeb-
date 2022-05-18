@@ -1,4 +1,4 @@
-package com.ithema.pojo;
+package com.future.pojo;
 
 public class User {
     private Integer id;

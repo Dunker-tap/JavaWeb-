@@ -1,7 +1,7 @@
-package com.ithema.web;
+package com.future.web;
 
-import com.ithema.pojo.User;
-import com.ithema.service.UserService;
+import com.future.pojo.User;
+import com.future.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,16 +24,16 @@ public class LoginServlet extends HttpServlet {
         //判断
         if (user.getUsername() != null) {
             if (user.getPassword() != null) {
-                //判断用户是否勾选记住我
-                //这样写判断形式的原因是防止空指针异常
+                //判断用户是否勾选“记住我”
+                //这样写判断形式的好处是能够有效防止空指针异常
                 if ("1".equals(remember)) {
                     //1、发送cookie
                     //创建对应的Cookie对象
                     Cookie c_username = new Cookie("username", username);
                     Cookie c_password = new Cookie("password", password);
-                    //设置Cookie的存活时间，这里就以存活时间为一个周为例
-                    c_username.setMaxAge(60 * 60 * 24 * 7);
-                    c_password.setMaxAge(60 * 60 * 24 * 7);
+                    //设置Cookie的存活时间，这里就以存活时间为一天为例
+                    c_username.setMaxAge(60 * 60 * 24);
+                    c_password.setMaxAge(60 * 60 * 24);
                     //2、发送Cookie
                     response.addCookie(c_username);
                     response.addCookie(c_password);
